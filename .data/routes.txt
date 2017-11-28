@@ -1,0 +1,5 @@
+# Custom Routes
+# PATHNAME LOCATION
+
+/example https://example.org/
+
