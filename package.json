@@ -1,0 +1,24 @@
+{
+  "name": "conciliator",
+  "version": "0.0.1",
+  "description": "A Proxy Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashenm/conciliator.git"
+  },
+  "keywords": [
+    "ashen",
+    "gunaratne"
+  ],
+  "author": "Ashen Gunaratne <mail@ashenm.ml>",
+  "license": "ISC",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/ashenm/conciliator/issues"
+  },
+  "homepage": "https://github.com/ashenm/conciliator#readme"
+}
