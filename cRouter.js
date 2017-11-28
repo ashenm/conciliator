@@ -54,15 +54,22 @@ class Router {
    * constructed from the parametrised file
    */
   static forge(file) {
-    return fs.readFileSync(file, 'utf8').trim().split(/\r\n|\r|\n/)
+    return fs.readFileSync(file, 'utf8').split(/\r\n|\r|\n/)
       .reduce((accumulator, route, index, routes) => {
 
+        const sanitised = route.trim();
+        const [path, location] = route.split(' ');
+
+        // ignore whitespace
+        if (!sanitised)
+          return accumulator;
+
         // ignore comments
-        if (!route.startsWith('#')) {
-          const [path, location] = route.split(' ');
-          accumulator[path] = location;
+        if (sanitised.startsWith('#')) {
+          return accumulator;
         }
 
+        accumulator[path] = location;
         return accumulator;
 
       }, {});
