@@ -37,6 +37,14 @@ http.createServer((request, response) => {
 
   }
 
+  // only allow GET requests
+  // to subsequent routes
+  if (!/^GET$/.test(request.method)) {
+    response.writeHead(405, {'Content-Type': 'text/plain'});
+    response.end(response.statusMessage);
+    return;
+  }
+
   // favicon
   if (/^\/favicon\.ico$/.test(pURL.pathname)) {
     response.writeHead(404);
